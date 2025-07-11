@@ -1,11 +1,17 @@
-"use client"
-import { Plus, MapPin, Calendar, Users, DollarSign } from "lucide-react"
-import { Card, CardBody, Typography, Button, Chip } from "@material-tailwind/react"
-import { useTravelStore } from "@/store/travel-store"
-import Link from "next/link"
+"use client";
+import { Plus, MapPin, Calendar, Users, DollarSign } from "lucide-react";
+import {
+  Card,
+  CardBody,
+  Typography,
+  Button,
+  Chip,
+} from "@material-tailwind/react";
+import { useTravelStore } from "@/store/travel-store";
+import Link from "next/link";
 
 export default function HomePage() {
-  const { trips } = useTravelStore()
+  const { trips } = useTravelStore();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -64,7 +70,10 @@ export default function HomePage() {
                       <Typography variant="h5" className="text-gray-900 mb-2">
                         {trip.title}
                       </Typography>
-                      <Typography variant="paragraph" className="text-gray-600 text-sm">
+                      <Typography
+                        variant="paragraph"
+                        className="text-gray-600 text-sm"
+                      >
                         {trip.description}
                       </Typography>
                     </div>
@@ -96,7 +105,13 @@ export default function HomePage() {
                     <div className="mt-4">
                       <Chip
                         value={trip.status}
-                        color={trip.status === "planning" ? "orange" : trip.status === "confirmed" ? "green" : "blue"}
+                        color={
+                          trip.status === "planning"
+                            ? "orange"
+                            : trip.status === "confirmed"
+                            ? "green"
+                            : "blue"
+                        }
                         className="text-xs"
                       />
                     </div>
@@ -108,5 +123,5 @@ export default function HomePage() {
         )}
       </main>
     </div>
-  )
+  );
 }
